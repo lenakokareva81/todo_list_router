@@ -7,15 +7,12 @@ import {
 } from "../api";
 import { setTodoInTodos, sortTodos, searchTodos } from "../utils/index ";
 
-// json-server --watch db.json --port 3004 --delay 2500
-// cd /e/фротент/result/todo_list_contex_api/src; json-server --watch db.json --port 3004
-// cd /e/фротент/result/todo_list_contex_api; npm start
 export const useTodos = () => {
 	const [todos, setTodos] = useState([]);
 	const [isloading, setIsLoading] = useState(false);
 	const [error, setError] = useState(null);
 	const [searchPhrase, setSearchPhrase] = useState("");
-	const [isSorted, setIsSorted] = useState(true);
+	const [isSorted, setIsSorted] = useState(false);
 
 	useEffect(() => {
 		getTodos();
@@ -68,12 +65,13 @@ export const useTodos = () => {
 			setError(error);
 		}
 	};
-	const newTodo = sortTodos(todos);
-	console.log("newTodo", newTodo);
-	// const sortedTodos = isSorted ? sortTodos(todos) : todos;
-	const sortedTodos = searchPhrase ? searchTodos(todos, searchPhrase) : todos;
+
+	const sortedTodos = isSorted ? sortTodos(todos) : todos;
+	const findTodosSerchPhrase = searchPhrase
+		? searchTodos(sortedTodos, searchPhrase)
+		: sortedTodos;
 	return {
-		todos: sortedTodos,
+		todos: findTodosSerchPhrase,
 		isloading,
 		error,
 		setIsLoading,

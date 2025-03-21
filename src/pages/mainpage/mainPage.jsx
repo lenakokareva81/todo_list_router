@@ -26,9 +26,20 @@ export const MainPage = ({ todos, isSorted , setIsSorted,searchPhrase,
 		<div className={styles.appContainer} id="taskList">
 			<h1 className={styles.appHeader}>TO DO LIST</h1>
 			<div className={styles.controlPanel} >
+				<div className={styles.taskListItem}>
+                         <label className={styles.taskListItemLabel}>
+							<input
+								type="checkbox"
+								checked={isSorted}
+								onChange={onChange}
+							></input>
+					     	<span>А-Я</span>
+						</label>
+
+				</div>
+
 			<NavLink className={`${styles.navLink} ${styles.navlinkControlPanel}`} to={`todo/${0}`}>
 			 <Button>+</Button></NavLink>
-			 <Button onClick={onChange}> А-Я </Button>
 			</div>
 
 			<SearchTodo

@@ -457,8 +457,10 @@ h1 {
 .navlinkControlPanel {
 	width: 50px;
 }
-/* a {
-	span {
-		color: aqua;
-	}
-} */
+span {
+	width: 100%;
+
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}

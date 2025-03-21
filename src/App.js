@@ -1,8 +1,10 @@
 import { Routes, Route, NavLink, Navigate } from "react-router-dom";
 
 import { MainPage, TodoPage, TodoNotFound } from "./pages";
-
 import { useTodos } from "./hooks";
+
+// cd /e/фротент/result/todo_list_router/src; json-server --watch db.json --port 3004
+// cd /e/фротент/result/todo_list_router; npm start
 
 export const App = () => {
 	const {
