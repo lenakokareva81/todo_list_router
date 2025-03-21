@@ -53,13 +53,20 @@ export const MainPage = ({ todos, isSorted , setIsSorted,searchPhrase,
 			todos.map(({ id, title, completed }) => (
 				<li key={id} className={styles.taskListItem}>
 					<NavLink to={`todo/${id}`}>
-						<label className={styles.taskListItemLabel}>
+					<label className={styles.taskListItemLabel}>
 							<input
 								type="checkbox"
 								checked={completed}
 							></input>
-						<span>{title}</span>
+							{({ isActive }) => isActive
+								?
+								 <span className={styles.spanActive}>{title}</span>
+								: <span>{title}</span>
+								}
+                             <span>{title}</span>
 						</label>
+
+
 					</NavLink>
 				</li>
 			))}

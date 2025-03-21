@@ -467,3 +467,6 @@ span {
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
+.spanActive {
+	color: #ee9ca7;
+}

@@ -1,14 +1,6 @@
 import styles from "./searchTodo.module.css";
-import { InputForm } from "../../components";
 
 export const SearchTodo = ({ placeholder, searchPhrase, setSearchPhrase }) => {
-	const requestNewTodo = () => {
-		// if (searchTodo > 3) {
-		// 	requestAddTodo(newTodo);
-		// 	setNewToto("");
-		// 	setIsCreating(false);
-		// }
-	};
 	const onClick = () => {};
 	return (
 		<>
@@ -30,9 +22,6 @@ export const SearchTodo = ({ placeholder, searchPhrase, setSearchPhrase }) => {
 					<button
 						type="submit"
 						className={`${styles.searchTask}`}
-						// className={className}
-						// title={title}
-						// onClick={onClick}
 					></button>
 				</div>
 			</form>
