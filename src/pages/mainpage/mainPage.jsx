@@ -33,7 +33,7 @@ export const MainPage = ({ todos, isSorted , setIsSorted,searchPhrase,
 								checked={isSorted}
 								onChange={onChange}
 							></input>
-					     	<span>А-Я</span>
+					     	<span className={styles.inSorting}>А-Я</span>
 						</label>
 
 				</div>
